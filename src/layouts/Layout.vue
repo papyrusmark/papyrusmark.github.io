@@ -1,0 +1,9 @@
+<template>
+  <v-app>
+    <Appbar></Appbar>
+    <v-main>
+      <slot></slot>
+    </v-main>
+    <Footer></Footer>
+  </v-app>
+</template>

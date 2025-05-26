@@ -1,0 +1,13 @@
+$primary-font: 'Space Grotesk Variable', sans-serif;
+
+html,
+body {
+  font-family: $primary-font !important;
+}
+
+// no-select sınıfı aynı kalabilir
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
