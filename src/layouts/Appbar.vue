@@ -1,49 +1,37 @@
 <template>
-  <v-app-bar app color="#0E1424" elevation="0" height="85">
-    <v-spacer></v-spacer>
-    <v-app-bar-nav-icon class="d-sm-none d-md-none" />
-    <v-toolbar-title class="ml-4">
-      <v-img :src="logo" alt="Openup Logo" contain min-width="100" width="200"></v-img>
-    </v-toolbar-title>
+  <v-app-bar color="#0E1424" elevation="0" flat height="85">
+    <template #prepend>
+      <v-app-bar-nav-icon v-if="$vuetify.display.smAndDown" @click="drawer = !drawer" />
+    </template>
 
-    <v-spacer></v-spacer>
+    <template v-if="$vuetify.display.mdAndUp">
+      <v-spacer></v-spacer>
+      <v-toolbar-title class="ml-4">
+        <v-img :src="logo" alt="Logo" contain min-width="150" width="200"></v-img>
+      </v-toolbar-title>
+      <v-spacer></v-spacer>
 
-    <v-toolbar-items class="d-none d-md-flex align-center justify-center flex-grow-0">
-      <v-btn
-        v-for="(item, index) in navigationStore.items"
-        :key="index"
-        text
-        :to="item.to"
-        exact
-        class="text-capitalize px-7"
-      >
-        {{ item.title }}
+      <div class="d-flex ga-4 mx-auto">
+        <v-btn
+          v-for="item in navigationStore.navigationItems"
+          :key="item"
+          class="text-none"
+          :text="item.title"
+        />
+      </div>
+
+      <v-spacer></v-spacer>
+      <v-btn class="px-5 py-2 text-capitalize mr-4" rounded color="white" variant="tonal">
+        Download
       </v-btn>
-    </v-toolbar-items>
+      <v-spacer></v-spacer>
+    </template>
 
-    
-        <v-img
-      class="d-inline-flex d-md-none mr-4"
-      :src="logo"
-      alt="Openup Logo Small"
-      contain
-      height="40"
-      width="120"
-    />
-    <v-spacer></v-spacer>
-
-    <v-spacer></v-spacer>
-
-    <v-btn
-      class="d-none d-md-inline-flex px-5 py-2 text-capitalize mr-4"
-      rounded
-      color="white"
-      variant="tonal"
-    >
-      Download
-    </v-btn>
-
-    <v-spacer></v-spacer>
+    <template v-else>
+      <v-toolbar-title class="d-flex justify-center mr-15">
+        <v-img :src="logo" alt="Logo" contain min-width="150" width="200"></v-img>
+      </v-toolbar-title>
+    </template>
   </v-app-bar>
 </template>
 
