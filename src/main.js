@@ -1,8 +1,10 @@
-import { registerPlugins } from './plugins/index.js'
+import { registerPlugins } from '@/plugins/index.js'
 
-import App from './App.vue'
+import App from '@/App.vue'
 
 import { createApp } from 'vue'
+
+import '@/assets/scss/main.scss'
 
 import 'unfonts.css'
 

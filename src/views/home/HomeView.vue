@@ -137,6 +137,8 @@
         </v-container>
       </v-sheet>
 
+      <UseCaseList></UseCaseList>
+
       <v-sheet>
         <v-container class="pa-sm-6 pa-md-12">
           <v-responsive class="text-center mx-auto" max-width="700">
